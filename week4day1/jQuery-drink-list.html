@@ -8,6 +8,13 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <style type="text/css">
+    body {
+      background-color: darkgray;
+    }
+  </style>
+
+
 </head>
 <body>
 
@@ -34,13 +41,13 @@
     // Using JavaScript programmatically append each drinkList item to the "drink-options" div
     // HINT: you will need a for loop to go over each element in the list
 
-    //targeting drink-options id, equivalent to GetElementById but jQuery
+    //  targeting drink-options id, equivalent to GetElementById but jQuery
     var drinkOptions = $('#drink-options');
 
-    //initializing new list using jQuery
+    //  initializing new list using jQuery
     var someList = $('<ul></ul>');
 
-    //nesting empty ul into empty div
+    //  nesting empty ul into empty div
     drinkOptions.append(someList);
 
 
@@ -50,7 +57,7 @@
     // initializing new list item and putting text nested within that will iterate thru array
     var listItem = $('<li>' + drinkList[i] + '</li>');
 
-    //  shoving list items into unordered list, which is already within empty div
+    // shoving list items into unordered list, which is already within empty div
     someList.append(listItem);
     }
 

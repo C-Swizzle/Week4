@@ -8,11 +8,29 @@
   <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+  <!-- not necessary ------------------------------------------------->
+  <style type="text/css">
+    div {
+      font-family: "Comic Sans MS", sans-serif;
+    }
+    body {
+      background-color: darkgray;
+    }
+    #pbj-eaten, #gc-eaten, #rb-eaten {
+      font-size: 22px;
+      color:darkred;
+    }
+    #pbj, #roastbeef, #grilledcheese {
+      font-size: 30px;
+      font-family: "Comic Sans MS", sans-serif;
+    }
+  </style>
+  <!-- end of not necessary ----------------------------------------->
 </head>
 
 <body>
 
-  <h1>Click to Eat Sandwich</h1>
+  <h1 id="header">Click to Eat a Random Sandwich! Or choose from the selection below.</h1>
   <h3 id="pbj">Peanut Butter Jelly</h3>
   <h3 id="grilledcheese">Grilled Cheese</h3>
   <h3 id="roastbeef">Roast Beef</h3>
@@ -40,10 +58,7 @@
       // ====================================================================
       // Here we create various on "click" functions which capture the clicks
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
-      // ...
-
-      //on click
-      $('#pbj').on('click', function() {
+      var pbFunction = function() {
         pbjEaten++;
 
         //change text to change to pbj-eaten
@@ -51,25 +66,43 @@
         
         //change html to be this img
         $('#img').html('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Peanut-Butter-Jelly-Sandwich.png/1200px-Peanut-Butter-Jelly-Sandwich.png" />');
-      })
-
-      $('#grilledcheese').on('click', function() {
+      };
+      var gcFunction = function() {
         gcEaten++;
         $('#gc-eaten').text(gcEaten);
         $('#img').html('<img id="theImg" src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/24/0/ZB0202H_classic-american-grilled-cheese_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371603614279.jpeg" />');
-      })
-
-      $('#roastbeef').on('click', function() {
+      };
+      var rbFunction = function() {
         rbEaten++;
         $('#rb-eaten').text(rbEaten);
         $('#img').html('<img id="theImg" src="http://siouxfalls.business/wp-content/uploads/2018/02/IMG_Feb202018at30839PM-e1519161025421-1024x650.jpg" />');
-      })
+      };
+
+       //on click
+       $('#pbj').on('click', pbFunction);
+
+      $('#grilledcheese').on('click', gcFunction);
+
+      $('#roastbeef').on('click', rbFunction);
 
       // ...
 
       
 
       // ...
+      //after class
+      $('#header').on('click', function() {
+        var randNum = Math.floor(Math.random() * 3);
+        if (randNum===0) {
+          pbFunction();
+        } else if (randNum ===1) {
+          gcFunction();
+        } else if (randNum===2) {
+          rbFunction();
+        } else {
+
+        }
+      });
 
     });
 
