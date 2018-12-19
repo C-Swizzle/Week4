@@ -58,6 +58,8 @@
       // ====================================================================
       // Here we create various on "click" functions which capture the clicks
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+
+
       var pbFunction = function() {
         pbjEaten++;
 
@@ -67,31 +69,34 @@
         //change html to be this img
         $('#img').html('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Peanut-Butter-Jelly-Sandwich.png/1200px-Peanut-Butter-Jelly-Sandwich.png" />');
       };
+
       var gcFunction = function() {
         gcEaten++;
         $('#gc-eaten').text(gcEaten);
         $('#img').html('<img id="theImg" src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/24/0/ZB0202H_classic-american-grilled-cheese_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371603614279.jpeg" />');
       };
+      
       var rbFunction = function() {
         rbEaten++;
         $('#rb-eaten').text(rbEaten);
         $('#img').html('<img id="theImg" src="http://siouxfalls.business/wp-content/uploads/2018/02/IMG_Feb202018at30839PM-e1519161025421-1024x650.jpg" />');
       };
 
-       //on click
-       $('#pbj').on('click', pbFunction);
+    
+      //on click 
+      $('#pbj').on('click', pbFunction);
 
       $('#grilledcheese').on('click', gcFunction);
 
       $('#roastbeef').on('click', rbFunction);
-
       // ...
 
-      
+     
+    });
 
-      // ...
-      //after class
-      $('#header').on('click', function() {
+
+  //after class--------------------------------------------------------
+  var randNumFunction = function() {
         var randNum = Math.floor(Math.random() * 3);
         if (randNum===0) {
           pbFunction();
@@ -99,12 +104,11 @@
           gcFunction();
         } else if (randNum===2) {
           rbFunction();
-        } else {
+        } else {};
 
-        }
-      });
-
-    });
+      };
+       $('#header').on('click', randNumFunction);
+      //end of after class ------------------------------------------------
 
 </script>
 
