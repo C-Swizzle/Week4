@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Content!</title>
+</head>
+<body>
+
+  <h1>Drink Selection!</h1>
+  <hr>
+
+  <div id="drink-options"></div>
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var drinkList = [
+      "Coffee: $5",
+      "Espresso: $7",
+      "Cappuccino: $6",
+      "Latte: $4",
+      "Tea: $3",
+      "Ice Coffee: $6",
+      "Ice Espresso: $8",
+      "Ice Latte: $6",
+      "Ice Tea: $4"
+    ];
+
+    // Using JavaScript programmatically append each drinkList item to the "drink-options" div
+    // HINT: you will need a for loop to go over each element in the list
+
+    //targeting drink-options id, equivalent to GetElementById but jQuery
+    var drinkOptions = $('#drink-options');
+
+    //initializing new list using jQuery
+    var someList = $('<ul></ul>');
+
+    //nesting empty ul into empty div
+    drinkOptions.append(someList);
+
+
+    // var someList = $('<ul>');
+
+    
+    for (i=0; i<drinkList.length; i++) {
+
+        // initializing new list item and putting text nested within that will iterate thru array
+        var listItem = $('<li>' + drinkList[i] + '</li>');
+
+        //  shoving list items into unordered list, which is already within empty div
+        someList.append(listItem);
+    }
+
+</script>
+
+
+</body>
+</html>
