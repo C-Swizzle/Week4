@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>JavaScript Content!</title>
+  <!--Link jQuery in head-->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -12,10 +17,7 @@
   <div id="drink-options"></div>
 
 
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    
   <script type="text/javascript">
     var drinkList = [
       "Coffee: $5",
@@ -43,15 +45,13 @@
 
 
     // var someList = $('<ul>');
-
-    
     for (i=0; i<drinkList.length; i++) {
 
-        // initializing new list item and putting text nested within that will iterate thru array
-        var listItem = $('<li>' + drinkList[i] + '</li>');
+    // initializing new list item and putting text nested within that will iterate thru array
+    var listItem = $('<li>' + drinkList[i] + '</li>');
 
-        //  shoving list items into unordered list, which is already within empty div
-        someList.append(listItem);
+    //  shoving list items into unordered list, which is already within empty div
+    someList.append(listItem);
     }
 
 </script>

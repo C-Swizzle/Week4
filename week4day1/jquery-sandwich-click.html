@@ -35,7 +35,14 @@
         var pbjEaten=0;
         var gcEaten=0;
         var rbEaten=0;
-        //on click
+
+        // FUNCTIONS
+      // ====================================================================
+      // Here we create various on "click" functions which capture the clicks
+      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+      // ...
+
+      //on click
       $('#pbj').on('click', function() {
         pbjEaten++;
 
@@ -45,6 +52,7 @@
         //change html to be this img
         $('#img').html('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Peanut-Butter-Jelly-Sandwich.png/1200px-Peanut-Butter-Jelly-Sandwich.png" />');
       })
+
       $('#grilledcheese').on('click', function() {
         gcEaten++;
         $('#gc-eaten').text(gcEaten);
@@ -59,12 +67,7 @@
 
       // ...
 
-      // FUNCTIONS
-      // ====================================================================
-      // Here we create various on "click" functions which capture the clicks
-      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
-      // ...
-
+      
 
       // ...
 
