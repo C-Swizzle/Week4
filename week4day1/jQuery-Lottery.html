@@ -33,23 +33,30 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
+        
         //init empty array --> always do this outside for loop
        
-    
         //function that activates when the button is clicked
       $('#random-button').on('click', function () {
+
+        //important to define an empty array outside the for loop, or it will gen a new blank array for every iteration.
         var randArray = [];
+
         // for loop to iterate 10 randNums
         for(i=0; i<10; i++) {
 
-            // RNGesus
+        // Math.floor() rounds a number down to the whole number;;; Math.random() generates a random decimal between 0 and 1.
         var randNum = Math.floor(Math.random() * 100);
-        //Puts each randNum into the array, 1 at a time.
 
+        //----------------------------------------------------------------
+        //Puts each randNum into the array, 1 at a time.------------------
+        //----------------------------------------------------------------
         // randArray[i] = randNum; <--- This does the same thing as below
-
+        //----------------------------------------------------------------
         randArray.push(randNum);
+
         }
+
         //Changes text to show the array
         $('#random-number').text(randArray);
       });
